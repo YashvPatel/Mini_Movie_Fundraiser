@@ -13,10 +13,33 @@ def yes_no(question):
         else:
             print("Please enter yes or no")
 
+# checks users enter an integer to a given question
+def num_check(question):
+
+    while True:
+
+        try:
+            response = int(input(question))
+            return response
+
+        except ValueError:
+            print("Please enter an integer")
 
 # checks that user response is not blank
 def not_blank(question):
+    # checks users enter an integer to a given question
+    def num_check(question):
 
+        while True:
+
+            try:
+                response = int(input(question))
+                return response
+
+            except ValueError:
+                print("Please enter an integer")
+
+    # Main routine goes here
     while True:
         response = input(question)
 
@@ -25,8 +48,6 @@ def not_blank(question):
             print("Sorry this can't be blank. PLease try again")
         else:
             return response
-
-
 # main routine starts here
 
 # set maximum number of tickets below
