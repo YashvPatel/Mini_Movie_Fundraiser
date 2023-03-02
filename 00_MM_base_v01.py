@@ -107,15 +107,18 @@ while tickets_sold < MAX_TICKETS:
         continue
 
     # calculate ticket cost
-    tickets_cost = calc_ticket_price(age)
+    ticket_cost = calc_ticket_price(age)
+    print("Age: {}, Ticket Price: ${:.2f}".format(age, ticket_cost))
 
     # get payment method
     pay_method = string_checker("Choose a payment method (cash/ credit): ",
                                 2, payment_list)
 
+    print(f'YOu chose {pay_method}')
+
     tickets_sold += 1
 
-    # Output number of tickets sold
+    # output number of tickets sold
     if tickets_sold == MAX_TICKETS:
         print("Congratulations you have sold all the tickets")
     else:
