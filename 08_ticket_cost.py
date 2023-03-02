@@ -1,10 +1,3 @@
-# Next Steps
-# Add currency formatting & Headings
-# integrate this component with the base component
-
-# PS: In base component remember to calculate surcharge
-# once payment method has been chosen!Q
-
 import pandas
 
 
