@@ -1,5 +1,6 @@
 import pandas
 
+
 # functions go here
 
 # Checks user has entered yes / no to a question
@@ -97,7 +98,6 @@ mini_movie_dict = {
     "Surcharge": all_surcharge
 }
 
-
 # Ask user if they want to see the instructions
 want_instructions = string_checker("Do you want to read the instructions (y/n) ",
                                    1, yes_no_list)
@@ -181,6 +181,7 @@ print("----- Ticket Cost / Profit -----")
 print("Total Ticket Sales: ${:.2f}".format(total))
 print("Total Price : ${:.2f}".format(profit))
 
+print()
 # output number of tickets sold
 if tickets_sold == MAX_TICKETS:
     print("Congratulations you have sold all the tickets")
