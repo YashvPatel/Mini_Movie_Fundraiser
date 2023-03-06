@@ -2,8 +2,8 @@
 # cash / credit based on list of options
 def string_checker(question, num_letters, valid_response):
 
-    error = "Please choose {} or {}".format(valid_response[0],
-                                            valid_response[1])
+    "Please choose {} or {}".format(valid_response[0],
+                                    valid_response[1])
 
     while True:
         response = input(question).lower()

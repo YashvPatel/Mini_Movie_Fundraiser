@@ -81,7 +81,7 @@ def string_checker(question, num_letters, valid_responses):
 
 
 # set maximum number of tickets below
-MAX_TICKETS = 3
+MAX_TICKETS = 5
 tickets_sold = 0
 
 yes_no_list = ["yes", "no"]
