@@ -63,11 +63,11 @@ winner_text = "The winner of the raffle is {}. " \
               "free!".format(winner_name, total_won)
 
 # list holding content to print / write to file
-to_write = {heading, mini_movie_string, ticket_cost_headings,
+to_write = [heading, mini_movie_string, ticket_cost_headings,
             total_ticket_sales, total_profit, sales_status,
-            winner_heading, winner_text}
+            winner_heading, winner_text]
 
-# print output
+# print output dog
 for item in to_write:
     print(item)
 
@@ -82,7 +82,6 @@ for item in to_write:
 
 # close file
 text_file.close()
-
 
 print()
 print('---- Raffle Winner ----')
