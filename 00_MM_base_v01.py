@@ -173,6 +173,17 @@ while tickets_sold < MAX_TICKETS:
     all_names.append(name)
     all_ticket_costs.append(ticket_cost)
     all_surcharge.append(surcharge)
+    name = not_blank("Enter your name (or 'xxx' to quit) ")
+
+    # exit loop if users type 'xxx' and have sold at least
+    # one ticket
+    if name == 'xxx' and len(all_names) > 0:
+        break
+    elif name == 'xxx':
+        print("you must sell at least ONE ticket  before quitting")
+        continue
+
+    age = num_check("Age: ")
 
 # create data frame from dictionary to organise information
 mini_movie_frame = pandas.DataFrame(mini_movie_dict)
@@ -226,7 +237,7 @@ day = today.strftime("%d")
 month = today.strftime("%m")
 year = today.strftime("%Y")
 
-heading = "---- Mini Movie Fundraiser Ticket Data ({}/{}/{}) ---\n".format(day, month, year)
+heading = "\n---- Mini Movie Fundraiser Ticket Data ({}/{}/{}) ---\n".format(day, month, year)
 filename = "MFF_{}_{}_{}".format(year, month, day)
 
 # Change frame to a string so that ww can export it to file
@@ -234,11 +245,15 @@ mini_movie_string = pandas.DataFrame.to_string(mini_movie_frame)
 
 # create strings for printing....
 ticket_cost_headings = "\n----- Ticket Cost / Profit -----"
-total_ticket_sales = "Total Ticket Sales: ${}".format(total)
-total_profit = "Total Profit : ${}".format(profit)
+total_ticket_sales = "Total Ticket Sales: ${:.2f}".format(total)
+total_profit = "Total Profit : ${:.2f}".format(profit)
 
-# edit text below!! It needs to work if we have unsold tickets
-sales_status = "\n*** All the tickets have been sold ***"
+# show users how many tickets have been sold
+if tickets_sold == MAX_TICKETS:
+    sales_status = "\n*** All the tickets have been sold ***"
+else:
+    sales_status = "\n **** You have sold {} out of {} " \
+                   "tickets *****".format(tickets_sold, MAX_TICKETS)
 
 winner_heading = "\n---- Raffle Winner -----"
 winner_text = "The winner of the raffle is {}. " \
