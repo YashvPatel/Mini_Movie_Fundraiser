@@ -16,4 +16,3 @@ filename = "MFF_{}_{}_{}".format(year, month, day)
 # Heading
 print(heading)
 print("The filename will be P{.txt".format(filename))
-
